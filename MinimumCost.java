@@ -8,14 +8,6 @@ public class MinimumCost {
 
 		Arrays.sort(p);
 		int tCost = 0;
-
-		if (n == 3) {
-			for (int i = 0; i < n; i++) {
-				tCost += p[i];
-			}
-		} else if (n == 2) {
-			tCost = p[1];
-		} else {
 			for (int i = n - 1; i > 1; i -= 2) {
 				if (i == 2) {
 					tCost += p[2] + p[0];
@@ -30,7 +22,7 @@ public class MinimumCost {
 			} else {
 				tCost += p[1];
 			}
-		}
+		
 		return tCost;
 
 	}
