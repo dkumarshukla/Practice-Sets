@@ -9,10 +9,12 @@ public class MinimumCost {
 		Arrays.sort(p);
 		int tCost = 0;
 
-		if (n <= 3) {
+		if (n == 3) {
 			for (int i = 0; i < n; i++) {
 				tCost += p[i];
 			}
+		} else if (n == 2) {
+			tCost = p[1];
 		} else {
 			for (int i = n - 1; i > 1; i -= 2) {
 				if (i == 2) {
@@ -30,6 +32,7 @@ public class MinimumCost {
 			}
 		}
 		return tCost;
+
 	}
 
 	public static void main(String[] args) {
@@ -38,7 +41,7 @@ public class MinimumCost {
 		int number = s.nextInt();
 		int[] p = new int[number];
 		for (int i = 0; i < number; i++) {
-			System.out.println("Enter the p of Person " + i);
+			System.out.println("Enter the price of Person " + i);
 			p[i] = s.nextInt();
 		}
 		System.out.println(minimumCost(p, number));
